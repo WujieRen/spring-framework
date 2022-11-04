@@ -2,6 +2,7 @@ package cn.rwj;
 
 import cn.rwj.controller.HelloController;
 import cn.rwj.controller.HiController;
+import cn.rwj.introduction.LittleUniverse;
 import cn.rwj.service.WelcomeService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -23,10 +24,13 @@ public class Entrance {
 		welcomeService.sayHello("任武杰");*/
 
 		ApplicationContext context = new AnnotationConfigApplicationContext(Entrance.class);
-		HelloController helloController = context.getBean(HelloController.class);
-		helloController.handleRequest();
+//		HelloController helloController = context.getBean(HelloController.class);
+//		helloController.handleRequest();
+//		HiController hiController = context.getBean(HiController.class);
+//		hiController.handleRequest();
+
 		HiController hiController = context.getBean(HiController.class);
-		hiController.handleRequest();
+		((LittleUniverse)hiController).burningup();
 	}
 }
 

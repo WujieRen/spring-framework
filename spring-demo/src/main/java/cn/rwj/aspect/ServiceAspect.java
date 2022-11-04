@@ -1,5 +1,6 @@
 package cn.rwj.aspect;
 
+import cn.rwj.introduction.LittleUniverse;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -50,6 +51,9 @@ public class ServiceAspect {
 	public void afterThrowing(JoinPoint joinPoint,  Exception exception){
 		System.out.println("抛出异常通知  " + joinPoint + "   " + exception.getMessage() );
 	}
+
+	@DeclareParents(value = "cn.rwj.controller..*", defaultImpl = cn.rwj.introduction.impl.LittleUniverseImpl.class)
+	public LittleUniverse littleUniverse;
 
 
 }
