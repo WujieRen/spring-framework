@@ -6,7 +6,7 @@ dependencies {
 	compile(project(":spring-jdbc"))
 	compile(project(":spring-tx"))
 	optional(project(":spring-aop"))
-	optional(project(":spring-context"))
+	compile(project(":spring-context"))
 	optional(project(":spring-web"))
 	optional("org.eclipse.persistence:org.eclipse.persistence.jpa")
 	optional("org.hibernate:hibernate-core")
